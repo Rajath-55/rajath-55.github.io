@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// CV Data - edit this to update your CV
+const cv = {
+  experience: [
+    {
+      company: "Nexthop.ai",
+      role: "Software Engineer",
+      period: "Present",
+      description: "Building infrastructure for networking systems in the AI datacenter space. Working with platform teams on L3 / Load Balancing for SONiC OS switches."
+    },
+    // Add more experiences here
+  ],
+  education: [
+    {
+      institution: "BITS Pilani, Goa",
+      degree: "Your Degree",
+      period: "Year - Year",
+    },
+    // Add more education here
+  ],
+  skills: [
+    "Python",
+    "Networking",
+    "SONiC",
+    "Linux",
+    // Add more skills
+  ],
+};
+---
+
+<BaseLayout title="CV | Rajath V" description="Rajath V's professional experience and qualifications.">
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div class="reveal">
+          <h1 class="opacity-0 animate-fade-in-up">
+            <span class="font-mono text-sm uppercase tracking-[0.3em] block mb-4" style="color: var(--accent);">
+              Curriculum Vitae
+            </span>
+            Rajath V
+          </h1>
+        </div>
+
+        <div class="reveal opacity-0 animate-fade-in-up animate-stagger-1">
+          <a
+            href="/cv.pdf"
+            download
+            class="group inline-flex items-center gap-2 px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-widest transition-all duration-300 hover:glow-copper"
+            style="background-color: var(--accent); color: var(--bg-primary);"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="mb-16">
+        <h2 class="reveal text-2xl font-display font-semibold mb-8 pb-2 border-b" style="border-color: var(--bg-tertiary);">
+          Experience
+        </h2>
+        <div class="space-y-8">
+          {cv.experience.map((job, i) => (
+            <div class="reveal" style={`animation-delay: ${(i + 1) * 0.1}s`}>
+              <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-2">
+                <h3 class="text-xl font-display font-semibold" style="color: var(--text-primary);">
+                  {job.role}
+                </h3>
+                <span class="font-mono text-sm" style="color: var(--accent);">{job.period}</span>
+              </div>
+              <p class="font-mono text-sm uppercase tracking-wider mb-3" style="color: var(--text-secondary);">
+                {job.company}
+              </p>
+              <p style="color: var(--text-secondary);">{job.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="mb-16">
+        <h2 class="reveal text-2xl font-display font-semibold mb-8 pb-2 border-b" style="border-color: var(--bg-tertiary);">
+          Education
+        </h2>
+        <div class="space-y-6">
+          {cv.education.map((edu, i) => (
+            <div class="reveal" style={`animation-delay: ${(i + 1) * 0.1}s`}>
+              <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
+                <h3 class="text-xl font-display font-semibold" style="color: var(--text-primary);">
+                  {edu.institution}
+                </h3>
+                <span class="font-mono text-sm" style="color: var(--accent);">{edu.period}</span>
+              </div>
+              <p style="color: var(--text-secondary);">{edu.degree}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div>
+        <h2 class="reveal text-2xl font-display font-semibold mb-8 pb-2 border-b" style="border-color: var(--bg-tertiary);">
+          Skills
+        </h2>
+        <div class="reveal flex flex-wrap gap-3">
+          {cv.skills.map((skill) => (
+            <span
+              class="px-4 py-2 rounded-full font-mono text-sm transition-all duration-300 hover:glow-copper"
+              style="background-color: var(--bg-secondary); color: var(--text-primary);"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .animate-fade-in-up {
+    animation-fill-mode: forwards;
+  }
+</style>

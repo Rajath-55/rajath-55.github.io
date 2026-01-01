@@ -1,37 +1,9 @@
 ---
-title: "Hello, World"
-description: "Welcome to my new blog. A fresh start with a retro-futuristic twist."
+title: "Becoming claude-pilled"
+description: "The incredible and the not-so-incredible stuff that comes along with AI tools"
 pubDate: 2026-01-01
 ---
 
-Welcome to my corner of the internet.
+I was not really an AI person at all in my previous company (Cisco). We never really had a bar set, or expectations to be met when we shipped features / fixed bugs. In quite a few companies, the expectation now is to have x% of your code be AI-generated, which is a weird as fuck metric but I guess it pleases the overlords, and so it has become mainstream. But what mainly is interesting to me is not how much code AI generates, but how exactly we can _review_ the code it generates efficiently.
 
-After some deliberation, I've decided to rebuild my personal site from scratch. The result is what you see before you: a blend of vintage aesthetics and modern technology, a site that feels both nostalgic and forward-looking.
-
-## Why a new site?
-
-Sometimes you need a fresh start. The previous iteration served me well, but it was time for something that better reflected who I am today. I wanted something minimal yet distinctive, professional yet personal.
-
-## The tech stack
-
-This site is built with:
-
-- **Astro** — A modern static site generator that ships zero JavaScript by default
-- **Tailwind CSS** — Utility-first CSS for rapid development
-- **TypeScript** — Because type safety matters
-
-The design draws inspiration from retro-futurism: the optimistic vision of the future as imagined in the past. Think warm cream tones, deep navy, and copper accents. Subtle scan lines and geometric patterns add texture without overwhelming the content.
-
-## What's next?
-
-I plan to write about:
-
-- Software development and engineering practices
-- Technology and its intersection with design
-- Thoughts and reflections on the craft
-
-Stay tuned. There's more to come.
-
----
-
-*Thanks for reading. Feel free to reach out if you'd like to connect.*
+Now that I've started using Augment at work and Claude code for personal use-cases, I've truly begun to realise how powerful these tools are to aid you, if not to fully replace a few parts of your daily life as a software engineer. Engineering is not merely prompting, but prompting and tooling for AI are now quite literally some of the most essential pieces of an ever-growing puzzle in the world of LLM generated content, and this holds true in particular for coding mainly because of how exhaustively these models have been trained on (almost) all of the world's open-source code at least. 

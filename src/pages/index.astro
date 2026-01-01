@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactForm from '../components/ContactForm.astro';
 ---
 
 <BaseLayout title="Rajath V">
@@ -14,7 +13,7 @@ import ContactForm from '../components/ContactForm.astro';
             class="font-mono text-sm uppercase tracking-[0.3em] mb-4 opacity-0 animate-fade-in animate-stagger-1"
             style="color: var(--accent);"
           >
-            Software Developer
+            Software @ Nexthop.ai
           </p>
 
           <h1 class="opacity-0 animate-fade-in-up animate-stagger-2">
@@ -23,8 +22,8 @@ import ContactForm from '../components/ContactForm.astro';
           </h1>
 
           <p class="mt-8 text-xl md:text-2xl leading-relaxed max-w-2xl opacity-0 animate-fade-in-up animate-stagger-3">
-            Crafting digital experiences where technology meets elegance.
-            Building the future, one line of code at a time.
+            I build Software for AI datacenter switches. Building side projects for fun. Fiddling with AI tools to 
+            keep up with the trend :)
           </p>
 
           <div class="mt-10 flex flex-wrap gap-4 opacity-0 animate-fade-in-up animate-stagger-4">
@@ -83,14 +82,9 @@ import ContactForm from '../components/ContactForm.astro';
       <div class="mt-12 grid md:grid-cols-2 gap-12">
         <div class="reveal space-y-6">
           <p>
-            I'm a software developer with a passion for building elegant solutions
-            to complex problems. My work sits at the intersection of technology
-            and design, where I strive to create experiences that are both
-            functional and beautiful.
-          </p>
-          <p>
-            When I'm not coding, you'll find me exploring new technologies,
-            reading about system design, or contributing to open-source projects.
+            I'm a software developer at Nexthop.ai, currently working on building infra for networking systems in the 
+            AI datacenter space. I mainly work with the platform teams to ship code for L3 / Load Balancing on SONiC 
+            OS for switches.
           </p>
         </div>
 
@@ -160,12 +154,29 @@ import ContactForm from '../components/ContactForm.astro';
         </h2>
         <p class="mt-4 max-w-xl">
           Have a project in mind or just want to say hello?
-          I'd love to hear from you.
+          Feel free to reach out.
         </p>
       </div>
 
-      <div class="mt-12 max-w-2xl reveal">
-        <ContactForm />
+      <div class="mt-12 reveal flex justify-center">
+        <a
+          href="mailto:rajath.v.05@gmail.com"
+          class="group inline-flex items-center gap-4 px-8 py-4 rounded-lg transition-all duration-300 hover:glow-copper"
+          style="background-color: var(--bg-primary);"
+        >
+          <span class="w-12 h-12 flex items-center justify-center rounded-full" style="background-color: var(--accent);">
+            <svg class="w-6 h-6" style="color: var(--bg-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </span>
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest" style="color: var(--text-secondary);">Email me at</p>
+            <p class="font-display text-xl font-semibold" style="color: var(--text-primary);">rajath.v.05@gmail.com</p>
+          </div>
+          <svg class="w-5 h-5 ml-4 transition-transform duration-300 group-hover:translate-x-2" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
