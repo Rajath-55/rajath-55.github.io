@@ -1,32 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// CV Data - edit this to update your CV
+// CV Data
 const cv = {
   experience: [
     {
-      company: "Nexthop.ai",
+      company: "Nexthop AI",
       role: "Software Engineer",
-      period: "Present",
-      description: "Building infrastructure for networking systems in the AI datacenter space. Working with platform teams on L3 / Load Balancing for SONiC OS switches."
+      period: "Jan 2025 - Present",
+      description: "SONiC OS platform development — config management, CLI, Yang modeling, and Dynamic Load Balancing. Built internal Slack notification service for distributed test runs with real-time tracking."
     },
-    // Add more experiences here
+    {
+      company: "Cisco Systems",
+      role: "Software Engineer II",
+      period: "Aug 2023 - Dec 2024",
+      description: "L2 Feature Manager / VxLAN — ESI multi-homing, Broadcom SDK upgrades, ELK+Kafka log pipelines. Achieved 2x MAC learning scale and 20% improvement in mac-learn rates."
+    },
+    {
+      company: "Cisco Systems",
+      role: "Software Engineering Intern",
+      period: "May 2022 - Jun 2023",
+      description: "Migrated tech-support from single to multi-threaded architecture, reducing execution time by 50%. Built event-based log cleanup tooling."
+    },
   ],
   education: [
     {
       institution: "BITS Pilani, Goa",
-      degree: "Your Degree",
-      period: "Year - Year",
+      degree: "B.E. Computer Science — CGPA: 8.71/10",
+      period: "Aug 2019 - Jun 2023",
     },
-    // Add more education here
   ],
-  skills: [
-    "Python",
-    "Networking",
-    "SONiC",
-    "Linux",
-    // Add more skills
-  ],
+  skills: {
+    technologies: ["SONiC OS", "Distributed Systems", "VxLAN", "Packet Forwarding", "Yang Modeling"],
+    tools: ["Kafka", "ElasticSearch", "Logstash", "Kibana", "Postgres", "Linux", "Git", "pyATS"],
+    languages: ["C", "C++", "Python", "Shell Scripting"],
+  },
 };
 ---
 
@@ -107,15 +115,31 @@ const cv = {
         <h2 class="reveal text-2xl font-display font-semibold mb-8 pb-2 border-b" style="border-color: var(--bg-tertiary);">
           Skills
         </h2>
-        <div class="reveal flex flex-wrap gap-3">
-          {cv.skills.map((skill) => (
-            <span
-              class="px-4 py-2 rounded-full font-mono text-sm transition-all duration-300 hover:glow-copper"
-              style="background-color: var(--bg-secondary); color: var(--text-primary);"
-            >
-              {skill}
-            </span>
-          ))}
+        <div class="space-y-6">
+          <div class="reveal">
+            <h3 class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--accent);">Technologies</h3>
+            <div class="flex flex-wrap gap-2">
+              {cv.skills.technologies.map((skill) => (
+                <span class="px-3 py-1.5 rounded-full font-mono text-sm" style="background-color: var(--bg-secondary); color: var(--text-primary);">{skill}</span>
+              ))}
+            </div>
+          </div>
+          <div class="reveal">
+            <h3 class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--accent);">Tools</h3>
+            <div class="flex flex-wrap gap-2">
+              {cv.skills.tools.map((skill) => (
+                <span class="px-3 py-1.5 rounded-full font-mono text-sm" style="background-color: var(--bg-secondary); color: var(--text-primary);">{skill}</span>
+              ))}
+            </div>
+          </div>
+          <div class="reveal">
+            <h3 class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--accent);">Languages</h3>
+            <div class="flex flex-wrap gap-2">
+              {cv.skills.languages.map((skill) => (
+                <span class="px-3 py-1.5 rounded-full font-mono text-sm" style="background-color: var(--bg-secondary); color: var(--text-primary);">{skill}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
