@@ -1,0 +1,141 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+}
+
+const { title, description, pubDate, updatedDate } = Astro.props;
+
+const formattedPubDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const formattedUpdatedDate = updatedDate?.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} | Rajath V`} description={description}>
+  <article class="py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <!-- Header -->
+      <header class="mb-16">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-wider mb-8 transition-all duration-300 hover:gap-3"
+          style="color: var(--accent);"
+        >
+          <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+          Back to blog
+        </a>
+
+        <div class="space-y-4">
+          <time class="font-mono text-sm uppercase tracking-widest" style="color: var(--accent);">
+            {formattedPubDate}
+          </time>
+          {updatedDate && (
+            <span class="font-mono text-sm" style="color: var(--text-secondary);">
+              {' '}· Updated {formattedUpdatedDate}
+            </span>
+          )}
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl">{title}</h1>
+
+          <p class="text-xl leading-relaxed" style="color: var(--text-secondary);">
+            {description}
+          </p>
+        </div>
+
+        <!-- Decorative line -->
+        <div class="mt-12 h-px w-24" style="background: linear-gradient(to right, var(--accent), transparent);"></div>
+      </header>
+
+      <!-- Content -->
+      <div class="prose">
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .prose {
+    --tw-prose-body: var(--text-secondary);
+    --tw-prose-headings: var(--text-primary);
+    --tw-prose-links: var(--accent);
+    --tw-prose-bold: var(--text-primary);
+    --tw-prose-code: var(--accent);
+    --tw-prose-quotes: var(--text-secondary);
+    --tw-prose-quote-borders: var(--accent);
+  }
+
+  .prose h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose p {
+    font-family: 'Source Serif Pro', Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+
+  .prose a:hover {
+    color: var(--accent-hover);
+  }
+
+  .prose blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+  }
+
+  .prose ul, .prose ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose img {
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  .prose hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--bg-tertiary), transparent);
+    margin: 3rem 0;
+  }
+</style>

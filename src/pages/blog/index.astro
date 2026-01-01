@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog | Rajath V" description="Thoughts on technology, development, and design.">
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <!-- Header -->
+      <div class="reveal">
+        <h1 class="opacity-0 animate-fade-in-up">
+          <span class="font-mono text-sm uppercase tracking-[0.3em] block mb-4" style="color: var(--accent);">
+            Blog
+          </span>
+          Thoughts & Ideas
+        </h1>
+        <p class="mt-6 text-xl max-w-2xl opacity-0 animate-fade-in-up animate-stagger-1">
+          Exploring technology, sharing insights, and documenting the journey.
+        </p>
+      </div>
+
+      <!-- Posts grid -->
+      <div class="mt-16 space-y-6">
+        {posts.length > 0 ? (
+          posts.map((post, index) => (
+            <div class="reveal" style={`animation-delay: ${(index + 2) * 0.1}s`}>
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                slug={post.slug}
+              />
+            </div>
+          ))
+        ) : (
+          <div class="text-center py-16 reveal">
+            <p class="font-mono text-sm uppercase tracking-widest" style="color: var(--text-secondary);">
+              No posts yet. Check back soon!
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .animate-fade-in-up {
+    animation-fill-mode: forwards;
+  }
+</style>
