@@ -8,3 +8,4 @@ I've been a car enthusiast ever since I was probably 5 years old. Every car I co
 
 My driving patterns have now fundamentally shifted. I drive mostly in the city, hours and hours of slow moving traffic. It is still not as bad as nearly fully stop and go traffic most of the times, but thats a possibility in the near future seeing the way Bengaluru is growing. Hence the question that naturally arises is - is there a point at which a manual makes no sense anymore considering the driving patterns?
 
+Driving to pondy and back in the span of 3 days last made me realise how good the 2014 ford ecosport actually is.

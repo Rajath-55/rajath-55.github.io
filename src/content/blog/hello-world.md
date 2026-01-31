@@ -11,3 +11,7 @@ Now that I've started using Augment at work and Claude code for personal use-cas
 ### How much of a difference does it make?
 
 Imo, not an insignificant amount. There is still work to be done as a developer, the code is not necessarily perfect right away. There will be flaws, a LOT of verbosity and then some. Testing will simply have a hundred extra cases no one really wants chalked out. But the fact that it reduces developer time is the main USP here.
+
+### Skills, skills skills
+
+Claude skills and custom agents are the talk of town, but how useful are they really? It very much depends on how much you are willing to invest to set them up, and by invest I mean using literal brain power and not moolah.
